@@ -80,12 +80,10 @@
 # 	t
 # end
 
-suits = ['hearts', 'diamonds', 'clubs', 'spades']
+suits = { hearts: [2,3,4,5,6,7,8,9], diamonds: [2,3,4,5,6,7,8,9],
+				 	clubs: [2,3,4,5,6,7,8,9], spades: [2,3,4,5,6,7,8,9] }
 
-puts suits[0]
-puts suits[1]
-puts suits[2]
-puts suits[3]
-
-
+suits.each do |key, value| 
+	puts "#{value[0]} of #{key} #{value[1]} of #{key} #{value[2]} of #{key} #{value[3]} of #{key} #{value[4]} of #{key} #{value[5]} of #{key} #{value[6]} of #{key} #{value[7]} of #{key}" 
+end
 
