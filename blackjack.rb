@@ -81,8 +81,30 @@
 # end
 
 def calculate_total(cards) 
-# [['H', '3'], ['S', '9'], ... ]
+	# [['H', '3'], ['S', '9'], ... ]
+	arr = cards.map{|e| e[1] }
 
+	total = 0
+	arr.each do |value|
+		if value == "A"
+			total += 11
+		if value.to_i == 0	# J, K, Q
+			total += 10
+		else
+			total += value.to_i
+		end
+	end
+
+	# correct for aces
+	arr.select{|e| e == "A"}.count.times do
+		if total > 21
+			total -= 10
+		end
+		# same as total -= 10 if total > 21
+	end
+
+	total
+	# implicitly returns total without needing to type'return'
 end
 
 puts "Welcome to Blackjack!"
