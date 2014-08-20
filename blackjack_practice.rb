@@ -1,5 +1,7 @@
 # blackjack_practice.rb
 
+puts "Welcome to Blackjack!"
+
 score = 0
 while score < 21
 	score = sum of dealer_hand
